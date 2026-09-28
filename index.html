@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生き方の軸をつくる6ヶ月間｜エニアグラム講座｜あんだんて</title>
+<meta name="description" content="自分のタイプの回は1回だけ。残りの11回は、自分以外の人の回です。公認心理師さっちゃんと、半年かけてエニアグラムの9タイプを学ぶ全12回のグループ講座。">
+<!-- ▼ OGP（og:image は絶対URL。相対だとLINEが読めない） -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="生き方の軸をつくる6ヶ月間｜エニアグラム講座">
+<meta property="og:description" content="自分のタイプの回は1回だけ。残りの11回は、自分以外の人の回です。">
+<meta property="og:url" content="https://satchan-cocoro.github.io/enneagram-kouza/">
+<meta property="og:image" content="https://satchan-cocoro.github.io/enneagram-kouza/ogp.png">
+<meta property="og:site_name" content="あんだんて">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1F3048;
+  --navy-deep: #16233A;
+  --gold: #A67C2E;
+  --gold-soft: #F2EADB;
+  --base: #FAF8F4;
+  --white: #FFFFFF;
+  --text: #2A2E36;
+  --gray: #737884;
+  --line: #E4DED2;
+  --tbd: #FFF1A8;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  color: var(--text); background: var(--base);
+  line-height: 1.9; font-size: 16px; -webkit-font-smoothing: antialiased;
+}
+.inner { max-width: 640px; margin: 0 auto; padding: 0 22px; }
+section { padding: 72px 0; }
+p + p { margin-top: 1.1em; }
+.label {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.22em;
+  color: var(--gold); margin-bottom: 16px;
+}
+.label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+h2 {
+  font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 25px; font-weight: 600; line-height: 1.6; color: var(--navy);
+  margin-bottom: 26px; text-wrap: balance;
+}
+h3 { font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif; color: var(--navy); font-weight: 600; line-height: 1.6; }
+
+/* 未確定の目印（公開前にすべて消す） */
+.tbd { background: var(--tbd); color: #6A5300; font-weight: 700; border-radius: 4px; padding: 0 6px; }
+.draft-bar {
+  position: sticky; top: 0; z-index: 10; background: #FFF6C9; color: #5C4800;
+  font-size: 12.5px; text-align: center; padding: 8px 16px; border-bottom: 1px solid #E8D98A;
+}
+
+/* ヒーロー */
+.hero { background: var(--navy-deep); color: var(--white); padding: 64px 0 56px; }
+.hero .eyebrow { font-size: 13px; letter-spacing: 0.24em; color: #D9BF8C; }
+.hero h1 {
+  font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif; font-weight: 600;
+  font-size: 34px; line-height: 1.5; margin: 14px 0 6px; text-wrap: balance;
+}
+.hero .sub { font-size: 15px; color: #C9D2DF; letter-spacing: 0.08em; }
+.hero .thesis {
+  margin: 36px 0 30px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18);
+  font-family: 'Shippori Mincho', serif; font-size: 20px; line-height: 1.9;
+}
+.hero .thesis em { font-style: normal; color: #E3C58A; }
+.hero .meta { font-size: 13.5px; color: #C9D2DF; }
+
+.hero-teacher { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+.hero-teacher img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: 50% 22%; border: 2px solid #D9BF8C; flex: none; }
+.hero-teacher p { font-size: 12.5px; color: #C9D2DF; line-height: 1.6; }
+.hero-teacher b { display: block; font-family: 'Shippori Mincho', serif; font-size: 16px; color: var(--white); font-weight: 600; }
+.profile-photo { width: 100%; max-width: 360px; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; border-radius: 16px; display: block; margin: 0 auto; }
+
+/* CTA */
+.cta-btn {
+  display: block; text-align: center; text-decoration: none;
+  background: var(--gold); color: var(--white);
+  font-weight: 700; font-size: 17px; letter-spacing: 0.06em;
+  padding: 18px 24px; border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(166,124,46,.35);
+  transition: transform .15s ease;
+}
+.cta-btn:hover { transform: translateY(-2px); }
+.cta-btn:focus-visible { outline: 3px solid var(--white); outline-offset: 3px; }
+.cta-note { text-align: center; font-size: 12.5px; color: var(--gray); margin-top: 12px; }
+.hero .cta-note { color: #AEB9C8; }
+
+/* 共感 */
+.voices { list-style: none; display: grid; gap: 12px; }
+.voices li {
+  background: var(--white); border-left: 3px solid var(--gold);
+  padding: 14px 18px; font-size: 15px; line-height: 1.7;
+}
+
+/* 9人の輪（シグネチャー） */
+.band { background: var(--navy); color: var(--white); padding: 72px 0; text-align: center; }
+.band h2 { color: var(--white); }
+.circle-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 330px; margin: 10px auto 30px; }
+.person {
+  aspect-ratio: 1; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.35);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0;
+  font-size: 12px; color: #C9D2DF; line-height: 1.3;
+}
+.person b { font-family: 'Shippori Mincho', serif; font-size: 22px; color: var(--white); font-weight: 600; }
+.person.me { background: var(--gold); border-color: var(--gold); color: var(--white); }
+.band p { color: #D5DDE8; font-size: 15px; }
+.band .big { font-family: 'Shippori Mincho', serif; font-size: 20px; color: var(--white); line-height: 1.9; }
+.band em { font-style: normal; color: #E3C58A; }
+
+/* 全12回 */
+.sessions { list-style: none; border-top: 1px solid var(--line); }
+.sessions li { display: grid; grid-template-columns: 58px 1fr auto; align-items: center; gap: 12px; padding: 14px 4px; border-bottom: 1px solid var(--line); }
+.sessions .no { font-size: 12px; color: var(--gray); letter-spacing: .08em; font-variant-numeric: tabular-nums; }
+.sessions .ttl { font-family: 'Shippori Mincho', serif; font-size: 17px; color: var(--navy); font-weight: 600; }
+.sessions .ttl small { display: block; font-family: 'Noto Sans JP', sans-serif; font-size: 12.5px; color: var(--gray); font-weight: 400; }
+.sessions .mon { font-size: 12.5px; color: var(--gold); font-weight: 700; font-variant-numeric: tabular-nums; }
+.sessions li.bookend { background: var(--gold-soft); }
+.note { font-size: 13.5px; color: var(--gray); margin-top: 18px; }
+
+/* お渡しするもの */
+.gift { display: grid; grid-template-columns: 44px 1fr; gap: 14px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.gift:last-child { border-bottom: none; }
+.gift .ic {
+  width: 44px; height: 44px; border-radius: 50%; background: var(--gold-soft); color: var(--gold);
+  display: flex; align-items: center; justify-content: center; font-family: 'Shippori Mincho', serif; font-weight: 700; font-size: 18px;
+}
+.gift h3 { font-size: 17px; margin-bottom: 4px; }
+.gift p { font-size: 14.5px; }
+.gift .story { margin-top: 10px; background: var(--white); padding: 14px 16px; font-size: 14px; border-radius: 8px; }
+
+/* 正直に */
+.honest { background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 28px 24px; }
+.honest p { font-size: 15px; }
+
+/* 講師 */
+.profile { display: grid; gap: 18px; }
+.profile-head { display: flex; align-items: center; gap: 16px; }
+.profile-head img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: 50% 20%; border: 3px solid var(--gold-soft); flex: none; }
+.profile .name { font-family: 'Shippori Mincho', serif; font-size: 22px; color: var(--navy); }
+.profile .role { font-size: 12.5px; color: var(--gold); font-weight: 700; letter-spacing: .1em; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.stat { background: var(--white); border-radius: 10px; padding: 14px 16px; text-align: center; }
+.stat b { display: block; font-family: 'Shippori Mincho', serif; font-size: 26px; color: var(--navy); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 12px; color: var(--gray); }
+.profile p { font-size: 14.5px; }
+
+/* 受講生の声 */
+.review { background: var(--white); border-radius: 12px; padding: 22px 22px 18px; margin-bottom: 14px; }
+.review h3 { font-size: 16px; margin-bottom: 8px; }
+.review p { font-size: 14.5px; }
+.review .who { font-size: 12.5px; color: var(--gray); margin-top: 8px; text-align: right; }
+.alumni { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.alumni li { background: var(--white); border: 1px solid var(--line); border-radius: 999px; font-size: 12.5px; padding: 4px 12px; }
+
+/* 講座概要 */
+.spec-wrap { overflow-x: auto; }
+table.spec { width: 100%; border-collapse: collapse; font-size: 14.5px; background: var(--white); }
+.spec th, .spec td { padding: 14px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.spec th { width: 32%; color: var(--navy); font-weight: 700; background: #F4F0E7; }
+.price { font-family: 'Shippori Mincho', serif; font-size: 24px; color: var(--navy); font-weight: 600; }
+
+/* 3ヶ月との違い */
+.compare { display: grid; gap: 14px; }
+.cmp { background: var(--white); border-radius: 12px; padding: 20px 20px; border-top: 3px solid var(--line); }
+.cmp.this { border-top-color: var(--gold); }
+.cmp h3 { font-size: 16px; margin-bottom: 6px; }
+.cmp p { font-size: 14px; }
+
+/* FAQ */
+details { background: var(--white); border-radius: 10px; margin-bottom: 10px; }
+summary { list-style: none; cursor: pointer; padding: 16px 44px 16px 18px; font-weight: 700; font-size: 15px; color: var(--navy); position: relative; line-height: 1.6; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--gold); font-size: 22px; font-weight: 400; }
+details[open] summary::after { content: "−"; }
+summary:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+details .a { padding: 0 18px 18px; font-size: 14.5px; }
+
+/* 締め */
+.closing { background: var(--navy-deep); color: var(--white); text-align: center; padding: 80px 0; }
+.closing h2 { color: var(--white); }
+.closing p.msg { color: #D5DDE8; font-size: 15px; margin-bottom: 32px; }
+.closing .sign { font-family: 'Shippori Mincho', serif; font-size: 14px; color: #D9BF8C; margin-top: 38px; letter-spacing: .1em; }
+footer { background: #101A2B; color: #9AA8BA; text-align: center; font-size: 12px; padding: 28px 22px; }
+footer a { color: #C9D2DF; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .cta-btn { transition: none; } }
+@media (min-width: 720px) {
+  .hero h1 { font-size: 42px; }
+  h2 { font-size: 29px; }
+  .compare { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+
+<header class="hero">
+  <div class="inner">
+    <div class="eyebrow">エニアグラム講座｜全12回</div>
+    <h1>生き方の軸をつくる<br>6ヶ月間</h1>
+    <p class="sub">2026年10月〜2027年3月・月2回のオンライン講座</p>
+    <p class="thesis">自分のタイプの回は、<em>1回だけ</em>。<br>残りの11回は、<em>自分以外の人の回</em>です。</p>
+    <div class="hero-teacher"><img src="satchan.jpg" alt=""><p><b>講師　さっちゃん</b>公認心理師／エニアグラムセッション延べ350名</p></div>
+    <a class="cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd08NwVX4j2yaocGOyE6DG5NZuHImAWypMFYuB7JT__Tu-72g/viewform" target="_blank" rel="noopener">講座に申し込む</a>
+    <p class="cta-note">第1回は <b>10月15日（木）21:00</b> スタート／お申し込みは第1回の前日まで</p>
+  </div>
+</header>
+
+<!-- 共感 -->
+<section>
+  <div class="inner">
+    <div class="label">こんなこと、ありませんか</div>
+    <h2>自分のことは、なんとなくわかる。<br>わからないのは、家族のほう。</h2>
+    <ul class="voices">
+      <li>なんでうちの子は、あそこであんなに嫌がるんだろう</li>
+      <li>なんで夫は、そこで黙るんだろう</li>
+      <li>職場のあの人の一言に、いつまでも引っかかってしまう</li>
+      <li>診断で自分のタイプは知った。でも、そこから先がわからない</li>
+    </ul>
+    <p style="margin-top:24px;">自分のことは、1回わかれば「そうそう、私ってこう！」ってなるんです。<br>でも、そばにいる人のことは、わからないままなんですよね。</p>
+  </div>
+</section>
+
+<!-- シグネチャー：9人の輪 -->
+<div class="band">
+  <div class="inner">
+    <h2>半年かけて、<br>9人分の取説がそろう。</h2>
+    <div class="circle-row" aria-hidden="true">
+      <div class="person me"><b>1</b>あなた</div>
+      <div class="person"><b>2</b>夫</div>
+      <div class="person"><b>3</b>上の子</div>
+      <div class="person"><b>4</b>下の子</div>
+      <div class="person"><b>5</b>母</div>
+      <div class="person"><b>6</b>上司</div>
+      <div class="person"><b>7</b>ママ友</div>
+      <div class="person"><b>8</b>同僚</div>
+      <div class="person"><b>9</b>友だち</div>
+    </div>
+    <p class="big">これ、<em>わざと</em>です。</p>
+    <p>「なんで？」の答えが見つかるのは、自分の回じゃなくて、その人の回。<br>毎回だれかのタイプを学ぶたびに、「家族の誰かはこれかも」が出てきます。<br>自分の回は、むしろ答え合わせに近いんです。</p>
+  </div>
+</div>
+
+<!-- 全12回 -->
+<section>
+  <div class="inner">
+    <div class="label">講座の中身｜全12回</div>
+    <h2>全体 → 9タイプ → 見抜き方。</h2>
+    <ol class="sessions">
+      <li class="bookend"><span class="no">第1回</span><span class="ttl">エニアグラムについて<small>全体のしくみ。タイプが決まっていなくても大丈夫</small></span><span class="mon">10月</span></li>
+      <li><span class="no">第2回</span><span class="ttl">タイプ7</span><span class="mon">10月</span></li>
+      <li><span class="no">第3回</span><span class="ttl">タイプ5</span><span class="mon">11月</span></li>
+      <li><span class="no">第4回</span><span class="ttl">タイプ8</span><span class="mon">11月</span></li>
+      <li><span class="no">第5回</span><span class="ttl">タイプ2</span><span class="mon">12月</span></li>
+      <li><span class="no">第6回</span><span class="ttl">タイプ4</span><span class="mon">12月</span></li>
+      <li><span class="no">第7回</span><span class="ttl">タイプ1</span><span class="mon">1月</span></li>
+      <li><span class="no">第8回</span><span class="ttl">タイプ3</span><span class="mon">1月</span></li>
+      <li><span class="no">第9回</span><span class="ttl">タイプ6</span><span class="mon">2月</span></li>
+      <li><span class="no">第10回</span><span class="ttl">タイプ9</span><span class="mon">2月</span></li>
+      <li class="bookend"><span class="no">第11回</span><span class="ttl">ホーナイ型<small>タイプをまたいで見る視点</small></span><span class="mon">3月</span></li>
+      <li class="bookend"><span class="no">第12回</span><span class="ttl">ハーモニクス＋タイプの見抜き方<small>ストレスがかかったときの「動き方」まで</small></span><span class="mon">3月</span></li>
+    </ol>
+    <p class="note">第1回は <b>10月15日（木）21:00〜</b>。1回120〜150分です。<br>第2回からの曜日・時間帯は、お申し込みのときのアンケートで決めます（平日午前／平日午後／平日夜／土曜午前／土曜午後）。どの時間帯になっても、録画で受けられます。</p>
+  </div>
+</section>
+
+<!-- タイプ未確定 -->
+<section style="padding-top:0;">
+  <div class="inner">
+    <div class="label">まだタイプがわからない方へ</div>
+    <h2>タイプが決まっている前提で、<br>始まりません。</h2>
+    <p>1回目がエニアグラム全体のお話で、最後の12回目が「タイプの見抜き方」。</p>
+    <p>それに、11回は自分以外の人の回なので、聞いているうちに「これは自分じゃないな」が先にわかってきます。<br>消去法で見えてくるの、けっこう面白いですよ。</p>
+    <p>ちなみに、11・12回目では「なぜ止まったか」も扱います。<br>私、110万円の講座で止まったことがあって。そのとき「ちゃんとしていると思われたい」が出てきて、質問できなくなったんです。ふだんの私はそんなこと気にしないタイプなのに←<br>人はストレスがかかると、自分のタイプとは別の面が出てきます。そんな「タイプの動き方」まで見ていきます。</p>
+  </div>
+</section>
+
+<!-- お渡しするもの -->
+<section style="background:var(--white);">
+  <div class="inner">
+    <div class="label">お渡しするもの</div>
+    <h2>2週間のあいだも、<br>ひとりにしません。</h2>
+    <div class="gift">
+      <div class="ic">本</div>
+      <div><h3>講座テキスト</h3><p>PDFでお渡しします。ご希望の方には、冊子でもお渡しします。</p></div>
+    </div>
+    <div class="gift">
+      <div class="ic">話</div>
+      <div><h3>さっちゃんとの個別セッション 60分×2回</h3><p>ご自身のことを、じっくり見る時間です。自分の回がまだ先でも、ここでいつでも扱えます。</p><p style="font-size:13px;color:var(--gray);margin-top:6px;">日時は、公式LINEで一緒に決めます。2027年3月末までにお使いください。</p></div>
+    </div>
+    <div class="gift">
+      <div class="ic">輪</div>
+      <div>
+        <h3>Discordへご招待</h3>
+        <p>これまでエニアグラムを学んできた受講生の方たちと交流できます。タイプについてのコラムや、「このタイプの人には、この発信者さんの言葉がしっくりくるかも」というSNSアカウントの紹介もお届けします。</p>
+        <p class="story">講座は月2回。つまり、2週間あくんです。<br>その2週間で、たいてい忘れます。私もそうでした。<br>だから半年のあいだ、ずっとエニアグラムの話が流れている場所をつくります。</p>
+      </div>
+    </div>
+    <div class="gift">
+      <div class="ic">録</div>
+      <div><h3>全回の録画</h3><p>お休みした回も、録画で受けられます。わかったつもりの回も、あとから見返すと「あ、これ夫だ」が出てきたりします。</p></div>
+    </div>
+    <div class="gift">
+      <div class="ic">証</div>
+      <div><h3>ディプロマ</h3><p>全12回を受講された方に、あんだんてのさっちゃんからエニアグラムを学んだことを示す修了証を発行します。<br><span style="font-size:13px;color:var(--gray)">※受講したことの証明です。資格や認定ではありません。</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 正直に -->
+<section>
+  <div class="inner">
+    <div class="honest">
+      <div class="label">ひとつだけ、正直に</div>
+      <p>この講座を受けたら必ず変われる、というものではありません。<br>やることは地味です。自分の反応を振り返って、言葉にして、日常で1つ試す。それだけ。</p>
+      <p>ただ、その地味なことを半年つづける相手がいるかどうかで、けっこう変わるんです。<br>コツコツしか勝たん、ってほんとにそうで♡</p>
+    </div>
+  </div>
+</section>
+
+<!-- 講師 -->
+<section style="padding-top:0;">
+  <div class="inner">
+    <div class="label">講師</div>
+    <div class="profile">
+      <img class="profile-photo" src="satchan.jpg" alt="講師のさっちゃん">
+      <div class="profile-head">
+        <div><div class="name">さっちゃん</div><div class="role">公認心理師｜心の相談室「あんだんて」店主</div></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>350名</b><span>エニアグラムセッション 延べ</span></div>
+        <div class="stat"><b>250名</b><span>講座受講 延べ</span></div>
+      </div>
+      <p>三児の母。元教員で、障害のあるお子さんの療育と特別支援学校での教育に10年以上たずさわってきました。筑波大学大学院で応用行動分析を研究。<br>2人目の妊娠中、仕事復帰のことや夫婦関係など悩みが尽きなかったときにエニアグラムに出会いました。2022年に心の相談室「あんだんて」を開業。エニアグラムと四柱推命で、人と人のあいだをほどくお手伝いをしています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 受講生の声 -->
+<section style="background:var(--white);">
+  <div class="inner">
+    <div class="label">受講生の声</div>
+    <h2>自分より先に、<br>相手が見えてくる。</h2>
+    <div class="review" style="background:var(--base);">
+      <h3>相手が愛おしくなりました</h3>
+      <p>ずっと学びたかったエニアグラムを学んで、ますます周りにいるひとや関わってる人のタイプを知りたくなって理解したいと思うようになりました。相手の本質を知り愛おしくなったり、自分の捉え方も変わったり。自分自身が一番自分の事を理解してあげれてなかった事の氣づきもありました。</p>
+      <p class="who">タイプ1w2・女性（エニアグラム講座）</p>
+    </div>
+    <div class="review" style="background:var(--base);">
+      <h3>いろんな角度から教えてくれる</h3>
+      <p>さっちゃんは、お客様に寄り添うのが上手！芸能人とかわかりやすいひとだしてくれたり、いろんな角度からその人を教えてくれる。マンツーマンだと私もいいたいことがいえる。身近な人こうかなーとか話したいこと聞いてくれるのありがたい。いろんな人がいるからこそ、私のよさや、周りの人の考えをいつもより俯瞰してみれるようになる。エニアって深くて面白い🥰</p>
+      <p class="who">タイプ6w7・女性（マンツーマン講座）</p>
+    </div>
+    <p style="font-size:14px;margin-top:22px;">これまで学んでくださった方のお仕事（一部）</p>
+    <ul class="alumni">
+      <li>書道家・書道教室講師</li><li>保育士</li><li>幼稚園教諭</li><li>女優</li><li>病院薬剤師</li><li>主婦</li><li>助産師</li><li>心理カウンセラー</li><li>料理教室講師</li><li>Webデザイナー</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 講座概要 -->
+<section>
+  <div class="inner">
+    <div class="label">講座概要</div>
+    <h2>生き方の軸をつくる6ヶ月間</h2>
+    <div class="spec-wrap">
+      <table class="spec">
+        <tr><th>期間</th><td>2026年10月〜2027年3月</td></tr>
+        <tr><th>回数</th><td>月2回・全12回（オンライン）</td></tr>
+        <tr><th>第2回からの時間帯</th><td>お申し込み時のアンケートで決定<br><span style="font-size:13px;color:var(--gray)">平日午前／平日午後／平日夜／土曜午前／土曜午後</span></td></tr>
+        <tr><th>第1回</th><td>2026年10月15日（木）21:00〜</td></tr>
+        <tr><th>1回の長さ</th><td>120〜150分</td></tr>
+        <tr><th>含まれるもの</th><td>講座テキスト（PDF・ご希望で冊子）／個別セッション60分×2回／Discordコミュニティ／全回の録画／ディプロマ</td></tr>
+        <tr><th>受講料（税込）</th><td>銀行振込（一括）<span class="price">150,000円</span><br>クレジットカード <span class="price">165,000円</span><br><span style="font-size:13px;color:var(--gray)">分割は6回まで・手数料なし（例：6回なら27,500円×6回）。回数はご相談ください</span><br><span style="font-size:13px;color:var(--gray)">全12回セットのみ（単発受講はありません）</span></td></tr>
+        <tr><th>申込締切</th><td>2026年10月14日（水）　第1回の前日まで</td></tr>
+        <tr><th>キャンセル</th><td>第1回の前日までは全額返金します。第1回が始まってからは、返金はありません（全回の録画でいつでも受けられるため）。<br><a href="legal.html" style="font-size:13px;color:var(--gold)">くわしくは特定商取引法に基づく表記へ</a></td></tr>
+      </table>
+    </div>
+    <a class="cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd08NwVX4j2yaocGOyE6DG5NZuHImAWypMFYuB7JT__Tu-72g/viewform" target="_blank" rel="noopener" style="margin-top:30px;">講座に申し込む</a>
+    <p class="cta-note">迷っていることがあれば、公式LINEから気軽に聞いてください</p>
+  </div>
+</section>
+
+<!-- 3ヶ月個別との違い -->
+<section style="padding-top:0;">
+  <div class="inner">
+    <div class="label">どちらが合いそう？</div>
+    <h2>3ヶ月の個別プログラムとの違い</h2>
+    <div class="compare">
+      <div class="cmp this"><h3>この講座（6ヶ月・グループ）</h3><p>エニアグラムを<b>学ぶ</b>講座。9タイプすべてを知って、まわりの人を理解する目を育てます。</p></div>
+      <div class="cmp"><h3>3ヶ月個別プログラム</h3><p>あなたとご家族の<b>トリセツを作る</b>プログラム。自分のことをじっくり見てほしい方に。</p></div>
+    </div>
+    <p class="note">どちらが合うか迷ったら、遠慮なく聞いてください。売り込みではなく、合わないほうを選んでほしくないんです。</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--white);">
+  <div class="inner">
+    <div class="label">よくあるご質問</div>
+    <h2>Q&amp;A</h2>
+    <details><summary>自分のタイプの回が、ずいぶん先なんですが…</summary><div class="a">そうなんです。でも、自分の回を待つ講座じゃないんです。毎回だれかのタイプを学ぶたびに「家族の誰かはこれかも」が出てきます。ご自身のことは、個別セッション2回でいつでも扱えますし、Discordのコラムでも話が流れ続けます。</div></details>
+    <details><summary>まだ自分のタイプがわかりません</summary><div class="a">大丈夫です！1回目が全体のお話、12回目が「タイプの見抜き方」なので、決まっている前提では始まりません。</div></details>
+    <details><summary>子どもが熱を出して、出られない日があったら？</summary><div class="a">子育て世代あるある…！お気になさらず。全回録画がありますので、あとからご覧いただけます。私も育児中なので、ほんとによくわかります。</div></details>
+    <details><summary>開催日時はどうやって決まりますか？</summary><div class="a">第1回は10月15日（木）21:00です。第2回からは、お申し込みフォームのアンケートで「参加しやすい時間帯」をうかがって、平日午前／平日午後／平日夜／土曜午前／土曜午後のなかから決めます。決まった日程は第1回でお知らせします。</div></details>
+    <details><summary>気になるタイプの回だけ受けられますか？</summary><div class="a">今回は全12回セットのみです。1回目の全体のお話と、11・12回目の「タイプをまたいで見る回」があってはじめて、9タイプがつながるように組んでいます。</div></details>
+    <details><summary>ディプロマとは何ですか？</summary><div class="a">あんだんてのさっちゃんからエニアグラムを学んだことを示す修了証です。全12回を受講された方に発行します。あくまで「受講した」ことの証明で、資格や認定ではありません。</div></details>
+    <details><summary>テキストを使って、自分で講座をしてもいいですか？</summary><div class="a">そちらはご遠慮いただいています。テキストは、諸先輩方の書籍や師匠の講座を参考に、私自身のセッションの中からまとめてきたものです。テキストを参考にタイプを見るのは、もちろんどんどんやってください！コピーして配ったり、写真を撮って送ったりするのはご遠慮ください。</div></details>
+    <details><summary>キャンセル・返金はできますか？</summary><div class="a">第1回の前日（10月14日）までにご連絡いただければ、全額返金します。第1回が始まってからは、返金はありません。お休みした回も録画で受けられますので、ご自分のペースで最後まで受けてくださいね。</div></details>
+    <details><summary>お申し込みのとき、アンケートがあるのはなぜですか？</summary><div class="a">参加しやすい時間帯をうかがうのと、「今のあなた」を記録しておくためです。半年後の最終回で同じ質問にもう一度答えてもらって、一緒に見比べます。点数をよく見せる必要はまったくないので、今のままで答えてくださいね。</div></details>
+  </div>
+</section>
+
+<!-- 締め -->
+<section class="closing">
+  <div class="inner">
+    <h2>自分の軸をもって、<br>しなやかに生きましょう。</h2>
+    <p class="msg">半年後、そばにいる人の「なんで？」が、<br>少しずつ「そうだったんだ」に変わっていきますように♡</p>
+    <a class="cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd08NwVX4j2yaocGOyE6DG5NZuHImAWypMFYuB7JT__Tu-72g/viewform" target="_blank" rel="noopener">講座に申し込む</a>
+    <p class="sign">あんだんて 店主　さっちゃん</p>
+  </div>
+</section>
+
+<footer>
+  <p>公式LINE @887nlija ／ Instagram @satchan_1989.andante</p>
+  <p style="margin-top:6px;"><a href="legal.html">特定商取引法に基づく表記</a>　／　<a href="privacy.html">プライバシーポリシー</a></p>
+  <p style="margin-top:10px;">© あんだんて</p>
+</footer>
+
+</body>
+</html>
