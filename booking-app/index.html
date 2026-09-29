@@ -1,0 +1,25 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><base target="_top"><?!= include_('styles'); ?></head>
+<body><main>
+<a class="back" href="https://satchan-cocoro.github.io/enneagram-kouza/">← 講座のご案内へ</a>
+<p class="eyebrow">人を見るエニアグラム</p><h1>受講前30分無料相談</h1>
+<p>申し込む前に、少し話してみたい方へ。</p>
+<p class="boundary">この無料相談は「人を見るエニアグラム」への参加をご検討中の方のための受講前相談です。<br>通常のエニアグラム個別セッションとは内容が異なります。</p>
+<p id="status" role="status" aria-live="polite">空き枠を確認しています…</p>
+<div id="entry"><form id="booking-form" aria-describedby="error">
+<fieldset id="fields"><legend>01 / 日時とご連絡先</legend>
+<p class="small">すべて日本時間（Asia/Tokyo）・相談時間30分です。予約可能な日時のみ表示します。</p>
+<label for="day">希望日（必須）</label><select id="day" required disabled><option value="">日付を選んでください</option></select>
+<label for="slot">希望時間（必須）</label><select id="slot" required disabled><option value="">先に日付を選んでください</option></select>
+<button type="button" id="reload" class="secondary">空き枠を再取得</button>
+<label for="name">お名前（必須）</label><input id="name" autocomplete="name" maxlength="100" required>
+<label for="email">メールアドレス（必須）</label><input id="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="email-help"><p id="email-help" class="small">予約確認メールをお送りします。</p>
+<label for="note">相談前に伝えておきたいこと（任意）</label><textarea id="note" rows="4" maxlength="2000" placeholder="講座について聞きたいことや、気になっていることがあればご記入ください。"></textarea>
+<div class="trap" aria-hidden="true"><label for="website">Website（空欄にしてください）</label><input id="website" tabindex="-1" autocomplete="off"></div>
+<label class="consent"><input id="consent" type="checkbox" required><span><a href="https://satchan-cocoro.github.io/enneagram-kouza/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>を確認し、予約に必要な情報の送信に同意します</span></label>
+<button id="review" type="submit">予約内容を確認する</button>
+</fieldset></form></div>
+<section id="confirmation" hidden aria-labelledby="confirm-title"><h2 id="confirm-title" tabindex="-1">02 / 予約内容の確認</h2><dl id="summary"></dl><p>日時は日本時間です。以下のボタンで予約を確定します。</p><button id="confirm" type="button">この内容で予約を確定する</button><button id="edit" class="secondary" type="button">入力内容を修正する</button><p id="receipt" class="small"></p></section>
+<p id="error" role="alert" tabindex="-1"></p>
+<section id="success" hidden aria-labelledby="success-title"><h2 id="success-title" tabindex="-1">無料相談の予約を受け付けました</h2><dl id="result"></dl><p id="mail-state"></p><p id="method"></p><p><a id="meeting" target="_blank" rel="noopener" hidden>当日の接続先を開く</a></p><h3>変更・キャンセル方法</h3><p id="cancel"></p><p id="booking-id" class="small"></p></section>
+<noscript>予約にはJavaScriptが必要です。ブラウザの設定を確認してください。</noscript>
+</main><?!= include_('client-js'); ?></body></html>

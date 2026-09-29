@@ -1,0 +1,78 @@
+<script>
+(() => {
+  'use strict';
+  const $=id=>document.getElementById(id);
+  let slots=[], payload=null, requestId=null, sending=false;
+  const dateFmt=new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',year:'numeric',month:'long',day:'numeric',weekday:'short'});
+  const timeFmt=new Intl.DateTimeFormat('ja-JP',{timeZone:'Asia/Tokyo',hour:'2-digit',minute:'2-digit',hour12:false});
+  const dateKey=s=>new Date(Date.parse(s)+9*3600000).toISOString().slice(0,10);
+  const label=s=>dateFmt.format(new Date(s))+' '+timeFmt.format(new Date(s))+'〜'+timeFmt.format(new Date(Date.parse(s)+1800000));
+  function error(message) {$('error').textContent=message; if(message) $('error').focus();}
+  function rpc(name,arg,done,fail) {
+    if(!window.google || !google.script || !google.script.run) {fail();return;}
+    const runner=google.script.run.withSuccessHandler(done).withFailureHandler(fail);
+    if(name==='availableSlots') runner.availableSlots(); else runner.bookConsultation(arg);
+  }
+  function load() {
+    error(''); $('reload').disabled=true; $('day').disabled=true; $('slot').disabled=true; $('review').disabled=true;
+    $('status').textContent='空き枠を確認しています…';
+    rpc('availableSlots',null,r=>{
+      $('reload').disabled=false;
+      if(!r.ok){$('status').textContent='';error(r.message);return;}
+      slots=r.slots; $('day').replaceChildren(new Option('日付を選んでください',''));
+      $('slot').replaceChildren(new Option('先に日付を選んでください',''));
+      [...new Set(slots.map(dateKey))].forEach(day=>{const s=slots.find(x=>dateKey(x)===day);$('day').add(new Option(dateFmt.format(new Date(s)),day));});
+      $('day').disabled=!slots.length;
+      $('status').textContent=slots.length?'予約可能な日時からお選びください。':'現在、予約可能な枠はありません。時間をおいて再度ご確認ください。';
+    },()=>{$('reload').disabled=false;$('status').textContent='';error('空き枠を取得できませんでした。通信環境を確認し「空き枠を再取得」を押してください。');});
+  }
+  $('reload').addEventListener('click',load);
+  $('day').addEventListener('change',()=>{
+    $('slot').replaceChildren(new Option('時間を選んでください',''));
+    slots.filter(s=>dateKey(s)===$('day').value).forEach(s=>$('slot').add(new Option(timeFmt.format(new Date(s))+'〜'+timeFmt.format(new Date(Date.parse(s)+1800000)),s)));
+    $('slot').disabled=!$('day').value; $('review').disabled=true;
+  });
+  $('slot').addEventListener('change',()=>{$('review').disabled=!$('slot').value;});
+  function details(id,p) {
+    const dl=$(id);dl.replaceChildren();
+    for(const [key,value] of [['ご予約日時（日本時間）',label(p.start)],['相談時間','30分'],['お名前',p.name],['登録メールアドレス',p.email],...(p.note?[['相談メモ',p.note]]:[])]) {
+      const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=key;dd.textContent=value;dl.append(dt,dd);
+    }
+  }
+  $('booking-form').addEventListener('submit',e=>{
+    e.preventDefault();error(''); if(!$('booking-form').reportValidity()) return;
+    requestId=crypto.randomUUID();
+    payload={start:$('slot').value,name:$('name').value,email:$('email').value,note:$('note').value,consent:$('consent').checked,website:$('website').value,requestId};
+    details('summary',payload);$('entry').hidden=true;$('confirmation').hidden=false;$('edit').hidden=false;
+    $('confirm').textContent='この内容で予約を確定する';$('receipt').textContent='';$('confirm-title').focus();
+  });
+  $('edit').addEventListener('click',()=>{if(sending)return;$('confirmation').hidden=true;$('entry').hidden=false;error('');$('day').focus();});
+  function uncertain(){
+    sending=false;$('confirm').disabled=false;$('confirm').textContent='予約結果を確認・再送';
+    $('status').textContent='';error('予約結果を確認できませんでした。画面を閉じず、同じ内容で「予約結果を確認・再送」を押してください。');
+  }
+  $('confirm').addEventListener('click',()=>{
+    if(sending || !payload)return;sending=true;error('');$('confirm').disabled=true;$('edit').hidden=true;
+    $('receipt').textContent='お問い合わせ用の受付キー: '+requestId;
+    $('status').textContent='予約を確認しています。画面を閉じずにお待ちください。';
+    rpc('bookConsultation',payload,r=>{
+      sending=false;$('status').textContent='';$('confirm').disabled=false;
+      if(!r.ok){
+        error(r.message);$('confirm').textContent='予約結果を確認・再送';
+        if(['TAKEN','INVALID','CONFIG','CANCELLED'].includes(r.code)) {
+          $('confirm').disabled=true;$('edit').hidden=false;
+          if(r.code==='TAKEN') { $('confirmation').hidden=true;$('entry').hidden=false;load();error(r.message); }
+        }
+        return;
+      }
+      $('confirmation').hidden=true;$('entry').hidden=true;$('success').hidden=false;details('result',r);
+      $('mail-state').textContent=r.customerMailSent?'確認メールをお送りしました。当日はどうぞよろしくお願いします。':'予約は完了しましたが、確認メールを送信できたことを確認できませんでした。再予約せず、日時と接続方法をお控えください。';
+      $('method').textContent='接続方法: '+r.meetingMethod+(r.meetingId?'\nミーティングID: '+r.meetingId+'\nパスコード: '+r.meetingPasscode:'');
+      if(r.meetingUrl && /^https:\/\//.test(r.meetingUrl)) {$('meeting').href=r.meetingUrl;$('meeting').hidden=false;}
+      $('cancel').textContent=r.cancellationInstructions;$('booking-id').textContent='受付番号: '+r.bookingId;
+      $('status').textContent='予約が完了しました。';$('success-title').focus();
+    },uncertain);
+  });
+  load();
+})();
+</script>

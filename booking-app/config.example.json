@@ -1,0 +1,78 @@
+{
+  "timezone": "Asia/Tokyo",
+  "durationMinutes": 30,
+  "calendarId": "{{USER_CONFIG_REQUIRED}}",
+  "busyCalendarIds": [
+    "{{USER_CONFIG_REQUIRED}}"
+  ],
+  "availability": {},
+  "minimumLeadTimeHours": 6,
+  "maximumBookingDaysAhead": null,
+  "bufferBeforeMinutes": 15,
+  "bufferAfterMinutes": 15,
+  "meetingMethod": "Zoom",
+  "meetingUrl": "",
+  "cancellationInstructions": "変更・キャンセルは公式LINE（ID：@887nlija）へ、お名前とご予約日時を添えてご連絡ください。",
+  "ownerNotificationEmail": "{{USER_CONFIG_REQUIRED}}",
+  "sendCalendarInvitation": "{{USER_CONFIG_REQUIRED}}",
+  "enableBookingLog": "{{USER_CONFIG_REQUIRED}}",
+  "spreadsheetId": "",
+  "availabilityMode": "dates",
+  "dateAvailability": {
+    "2026-09-30": [
+      [
+        "09:00",
+        "16:00"
+      ]
+    ],
+    "2026-10-01": [
+      [
+        "09:00",
+        "16:00"
+      ]
+    ],
+    "2026-10-02": [
+      [
+        "09:00",
+        "16:00"
+      ]
+    ],
+    "2026-10-06": [
+      [
+        "09:00",
+        "12:00"
+      ]
+    ],
+    "2026-10-07": [
+      [
+        "09:00",
+        "14:00"
+      ]
+    ],
+    "2026-10-08": [
+      [
+        "09:00",
+        "16:00"
+      ]
+    ],
+    "2026-10-09": [
+      [
+        "09:00",
+        "16:00"
+      ]
+    ],
+    "2026-10-13": [
+      [
+        "09:00",
+        "16:00"
+      ]
+    ],
+    "2026-10-14": [
+      [
+        "09:00",
+        "16:00"
+      ]
+    ]
+  },
+  "meetingMode": "zoomAutomatic"
+}
